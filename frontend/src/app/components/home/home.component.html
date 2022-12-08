@@ -1,0 +1,39 @@
+<mat-toolbar color="primary" class="navbar">
+  <mat-toolbar-row>
+    <h2 style="color: rgb(243, 243, 17);font-size: 2em;">Wires</h2>
+    <span class="example-spacer"></span>
+    <button mat-menu-item [routerLink]="['create']" class="button-menu">
+      <mat-icon
+        class="icon-style"
+        aria-hidden="false"
+        aria-label="Create Messages"
+        >edit_square</mat-icon
+      >
+    </button>
+
+    <button mat-menu-item [routerLink]="[':id']" class="button-menu">
+      <mat-icon class="icon-style" aria-hidden="false" aria-label="My messages"
+        >send</mat-icon
+      >
+    </button>
+
+    <button mat-menu-item [routerLink]="  ['']" class="button-menu">
+      <mat-icon
+        class="icon-style"
+        aria-hidden="false"
+        aria-label="See all messages"
+        >forum</mat-icon
+      >
+    </button>
+
+    <button mat-menu-item (click)="token.logout()" class="button-menu">
+      <mat-icon class="icon-style" aria-hidden="false" aria-label="Logout"
+        >power_settings_new</mat-icon
+      >
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<main class="main" [@routerTransition]="getState(o)">
+  <router-outlet #o="outlet"></router-outlet>
+</main>

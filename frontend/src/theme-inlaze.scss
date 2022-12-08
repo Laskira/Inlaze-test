@@ -1,0 +1,18 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+
+$inlaze-primary: mat.define-palette(mat.$grey-palette);
+$inlaze-accent: mat.define-palette(mat.$yellow-palette, A200, A100, A400);
+$inlaze-warning: mat.define-palette(mat.$red-palette);
+
+$inlaze-theme: mat.define-light-theme((
+ color: (
+   primary: $inlaze-primary,
+   accent: $inlaze-accent,
+ ),
+ typography: mat.define-typography-config(),
+ density: 0,
+));
+
+@include mat.all-component-themes($inlaze-theme);

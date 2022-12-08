@@ -1,0 +1,49 @@
+<div class="Container">
+ 
+  <h2>Sign in</h2>
+  <form [formGroup]="FormRegister" (ngSubmit)="CreateUser()">
+    <mat-form-field appearance="outline" class="media-width">
+      <mat-label>Nickname</mat-label>
+      <input
+        type="text"
+        placeholder="Nickname"
+        formControlName="Nickname"
+        required
+        autofocus
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="media-width">
+      <mat-label>Full Name</mat-label>
+      <input type="text" placeholder="Full name" formControlName="Name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="media-width">
+      <mat-label>Email</mat-label>
+      <input type="email" placeholder="Email" formControlName="Email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="media-width">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        placeholder="Password"
+        formControlName="Password"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <button mat-raised-button color="primary" [disabled]="!FormRegister.valid">
+      Create
+      <mat-icon>send</mat-icon>
+    </button>
+  </form>
+</div>

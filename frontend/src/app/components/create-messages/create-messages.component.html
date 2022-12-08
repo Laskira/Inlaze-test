@@ -1,0 +1,19 @@
+<form [formGroup]="FormMessage" (ngSubmit)="Submit()">
+ 
+    <input
+      type="text"
+      placeholder="Title Message"
+      formControlName="TitleMessage"
+      required
+      autofocus
+    />
+
+ 
+    <input
+      type="text"
+      formControlName="Message"
+      placeholder="Messages"
+    />
+  <br/>
+  <button mat-raised-button color="accent">Share</button>
+</form>

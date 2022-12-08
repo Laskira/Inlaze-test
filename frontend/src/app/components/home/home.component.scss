@@ -1,0 +1,49 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.main {
+  position: relative;
+  text-align: center;
+  width: auto;
+  margin: 8rem auto;
+}
+
+.button-menu {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  .icon-style {
+    color: rgb(243, 243, 17);
+    padding-right: 16px;
+    font-size: 28px;
+  }
+}
+
+.navbar {
+  grid-area: navbar;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  // .user {
+  //   display: flex;
+  //   justify-items: center !important;
+  //   margin-right: 10px;
+
+  //   img {
+  //     height: 40px !important;
+  //     margin-right: 5px;
+  //     cursor: pointer;
+  //   }
+
+  //   p {
+  //     margin-top: 3px;
+  //   }
+  // }
+}

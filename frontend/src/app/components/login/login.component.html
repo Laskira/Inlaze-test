@@ -1,0 +1,50 @@
+<div>
+  <form [formGroup]="FormLogin" autocomplete="off">
+    <mat-form-field appearance="outline" class="media-width">
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        placeholder="Email"
+        formControlName="Email"
+        required
+        autofocus
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="media-width">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        placeholder="Password"
+        formControlName="Password"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <button
+      type="submit"
+      (click)="login()"
+      [disabled]="!FormLogin.valid"
+      mat-raised-button
+      color="accent"
+    >
+      Ingresar
+    </button>
+  </form>
+
+  <div>
+    <p>
+      ¿Aún no tienes una cuenta?
+      <a routerLink="/registrar">Registrate</a>
+    </p>
+  </div>
+</div>
